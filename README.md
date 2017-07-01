@@ -1,7 +1,7 @@
 ## 同步有道云笔记中的 markdown 笔记到 hexo 博客
+![](./assets/ynote2hexo_3.png)
 ![](./assets/ynote2hexo_1.png)
 ![](./assets/ynote2hexo_2.png)
-![](./assets/ynote2hexo_3.png)
 
 ## Install
 
