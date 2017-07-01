@@ -1,6 +1,7 @@
 ## 同步有道云笔记中的 markdown 笔记到 hexo 博客
 ![](./assets/ynote2hexo_1.png)
 ![](./assets/ynote2hexo_2.png)
+![](./assets/ynote2hexo_3.png)
 
 ## Install
 
@@ -10,7 +11,6 @@ pip install requests
 # 修改 start.py 中的 HEXO_DIR 为你的 Hexo 目录
 # 修改 start.py 中的 USERNAME 为你的有道云笔记账号
 # 修改 start.py 中的 PASSWORD 为你的有道云笔记密码
-# 修改 start.py 中的 GITHUB_DIR 为你的 Github 仓库对应的本地目录
 python start.py
 ```
 
@@ -21,7 +21,6 @@ python start.py
 1. 读取笔记并存储为 `.md` 格式的文件到 `_posts` 中;
 1. 替换 `_posts` 文件夹到 `hexo/source/_posts`;
 1. 部署 Hexo;
-1. 备份 `_posts` 到 Github ;
 1. 部署到服务器以后, 可以添加定时任务, 比如每天凌晨同步一次;
 
 ## 注意
@@ -34,9 +33,8 @@ python start.py
 
 ## TODO
 + [ ] 模拟登陆;
-+ [ ] 接口请求错误验证;
 + [x] 部署 Hexo;
-+ [ ] 备份到 Github;
 + [ ] 定时任务;
++ [ ] 代码太挫了, 需要改改;
 
 **欢迎 Fork 和 Start ! 🤓**
