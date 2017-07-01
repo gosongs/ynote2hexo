@@ -1,3 +1,7 @@
+## 同步有道云笔记中的 markdown 笔记到 hexo 博客
+![](./assets/ynote2hexo_1.png)
+![](./assets/ynote2hexo_2.png)
+
 ## Install
 
 ```python
@@ -31,7 +35,7 @@ python start.py
 ## TODO
 + [ ] 模拟登陆;
 + [ ] 接口请求错误验证;
-+ [ ] 部署 Hexo;
++ [x] 部署 Hexo;
 + [ ] 备份到 Github;
 + [ ] 定时任务;
 
