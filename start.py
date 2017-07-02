@@ -13,11 +13,8 @@ sys.setdefaultencoding('utf8')
 
 # Hexo 文件夹
 HEXO_DIR = '/Users/go_songs/Documents/fuckblog/source/_posts'
-USERNAME = 'go_songs@163.com'
-PASSWORD = ''
-GITHUB_DIR = ''
 
-# 登录以后存储在 Cookie 里的值
+# 登录有道云笔记后存储在 Cookie 里的值
 YNOTE_PERS = 'v2|urstoken||YNOTE||web||-1||1498882067319||116.226.216.207||go_songs@163.com||k5RfzEOMqFRPy0Hq4hLzG0gBnfY5PMgL06ZhMz5nH64RQyOMYWnHqS0YM64eBkM6B0e4nfq4nMUf0QB6LJK6LzWR'
 YNOTE_SESS = 'v2|8r8rH29TFWpFhHgZ6MeL0wFPLPS6LgyRwLkfzfOMY50kf0LqFkMzERlEnfzWk4gLRUY0Lwz64pz0qLhLPFP4quRlY6LPz6MU50'
 YNOTE_LOGIN = '3||1498882067334'
@@ -46,50 +43,6 @@ HEADERS = {
     'Content-Type':
     'application/x-www-form-urlencoded;charset=UTF-8'
 }
-
-
-# 模拟登陆
-def mockLogin(username, password):
-    # 我需要这四个Cookie的值
-    # YNOTE_PERS  https://note.youdao.com/login/acc/login
-    # YNOTE_SESS  https://note.youdao.com/login/acc/login
-    # YNOTE_LOGIN https://note.youdao.com/login/acc/login
-    # YNOTE_CSTK  http://note.youdao.com/yws/mapi/user
-    ts = int(round(time.time() * 1000))
-    url = 'https://note.youdao.com/login/acc/urs/verify/check?app=web&product=YNOTE&tp=urstoken&cf=6&fr=1&systemName=&deviceType=&ru=http%3A%2F%2Fnote.youdao.com%2FsignIn%2F%2FloginCallback.html&er=http%3A%2F%2Fnote.youdao.com%2FsignIn%2F%2FloginCallback.html&vcode=&systemName=mac&deviceType=MacPC&timestamp={ts}'.format(
-        ts=ts)
-
-    headers = {
-        'Accept':
-        'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-        'Accept-Encoding':
-        'gzip, deflate, br',
-        'Accept-Language':
-        'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4',
-        'Cache-Control':
-        'no-cache',
-        'Connection':
-        'keep-alive',
-        'Host':
-        'note.youdao.com',
-        'Origin':
-        'http://note.youdao.com',
-        'Pragma':
-        'no-cache',
-        'Referer':
-        'http://note.youdao.com/signIn/index.html?&callback=https://note.youdao.com/web&from=web',
-        'Upgrade-Insecure-Requests':
-        '1',
-        'User-Agent':
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
-        'Cookie':
-        'OUTFOX_SEARCH_USER_ID=-328441891@10.120.182.17; YNOTE_URS_VERIFY=xUmNYQhTFWOGkfU5P4JS0Q4nLeyPMYA0TZ0HUYO4qz0QuhLlmOL6BRTyPLYl0LwFRgz6LTzhfpy0pFhHzMRLkfRTuPMY5RMg4R; JSESSIONID=aaa1f5T-FnvJ25degeTYv',
-        'Content-Type':
-        'application/x-www-form-urlencoded'
-    }
-    data = {'username': username, 'password': md5(password)}
-    res = requests.post(url, data=data, headers=headers, allow_redirects=False)
-    print(res.headers)
 
 
 # 获取所有的笔记本
